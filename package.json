@@ -1,7 +1,7 @@
 {
   "name": "ouroboros-volunteer-certificates",
   "version": "1.0.0",
-  "description": "Generates Zooniverse volunteer certificates for work on Ouroboros.",
+  "description": "Generates Zooniverse volunteer certificates for their contributions on Ouroboros.",
   "main": "main.js",
   "type": "module",
   "scripts": {
