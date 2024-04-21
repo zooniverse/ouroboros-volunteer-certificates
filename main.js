@@ -10,11 +10,26 @@ Ref: https://react-pdf.org/
 import { createElement as elem } from 'react'
 import ReactPDF from '@react-pdf/renderer'
 import ZooniverseCertificate from './app/zooniverse-certificate.js'
+import readCSV from './app/read-csv.js'
 
 import { dirname } from 'path'
 import { fileURLToPath } from 'url'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
+function main () {
+  console.log('# Ouroboros Volunteer Certificates for the Zooniverse')
+
+  const inputFilename = process?.argv?.[2]
+  if (!inputFilename) {
+    console.log('Please specify an input CSV file. e.g.:')
+    console.log('npm start example-input.csv')
+    return 1
+  }
+}
+
+main()
+
+/*
 const names = ['Shaun', 'Sean', 'Mark']
 
 console.log('React-PDF Experiment')
@@ -28,3 +43,4 @@ names.forEach((name) => {
 })
 
 console.log('DONE')
+ */
