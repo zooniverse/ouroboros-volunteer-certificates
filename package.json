@@ -1,0 +1,29 @@
+{
+  "name": "ouroboros-volunteer-certificates",
+  "version": "1.0.0",
+  "description": "Generates Zooniverse volunteer certificates for work on Ouroboros.",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "start": "node main.js",
+    "example": "node example.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zooniverse/ouroboros-volunteer-certificates.git"
+  },
+  "keywords": [
+    "zooniverse",
+    "ouroboros"
+  ],
+  "author": "Zooniverse <contact@zooniverse.org> (https://www.zooniverse.org)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zooniverse/ouroboros-volunteer-certificates/issues"
+  },
+  "homepage": "https://github.com/zooniverse/ouroboros-volunteer-certificates#readme",
+  "dependencies": {
+    "@react-pdf/renderer": "^3.3.8",
+    "react": "^18.2.0"
+  }
+}
