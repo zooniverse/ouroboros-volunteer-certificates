@@ -16,7 +16,7 @@ import { dirname } from 'path'
 import { fileURLToPath } from 'url'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
-function main () {
+async function main () {
   console.log('# Ouroboros Volunteer Certificates for the Zooniverse')
 
   const inputFilename = process?.argv?.[2]
@@ -26,7 +26,9 @@ function main () {
     return 1
   }
 
-  const volunteers = readCSV(inputFilename)
+  const volunteers = await readCSV(inputFilename)
+  console.log('+++ volunteers:')
+  console.log(volunteers)
 }
 
 main()
