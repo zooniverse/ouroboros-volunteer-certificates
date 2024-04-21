@@ -1,0 +1,110 @@
+user_id,project_id,project_display_name,total_count,user_login,user_display_name,user_credited_name
+2,21,Galaxy Zoo,427,volunteer_ep,Volunteer EP,Mr. E.P.
+2,35,Seafloor Explorer,80,volunteer_ep,Volunteer EP,Mr. E.P.
+2,40,Snapshot Serengeti Ouroboros,4,volunteer_ep,Volunteer EP,Mr. E.P.
+2,33,SETI Live,1,volunteer_ep,Volunteer EP,Mr. E.P.
+2,42,Notes from Nature I,1,volunteer_ep,Volunteer EP,Mr. E.P.
+2,43,Space Warps,53,volunteer_ep,Volunteer EP,Mr. E.P.
+2,47,Radio Galaxy Zoo,65,volunteer_ep,Volunteer EP,Mr. E.P.
+2,27,Milky Way Project,5,volunteer_ep,Volunteer EP,Mr. E.P.
+2,53,Asteroid Zoo,24,volunteer_ep,Volunteer EP,Mr. E.P.
+2,26,Planet Hunters,2,volunteer_ep,Volunteer EP,Mr. E.P.
+2,52,Condor Watch,8,volunteer_ep,Volunteer EP,Mr. E.P.
+2,36,Cyclone Center,3,volunteer_ep,Volunteer EP,Mr. E.P.
+2,54,Floating Forests v1,22,volunteer_ep,Volunteer EP,Mr. E.P.
+2,55,Penguin Watch,3,volunteer_ep,Volunteer EP,Mr. E.P.
+4,57,Chicago Wildlife Watch Original,184,volunteer_aw,volunteer_aw,
+4,55,Penguin Watch,1,volunteer_aw,volunteer_aw,
+4,54,Floating Forests v1,2493,volunteer_aw,volunteer_aw,
+4,40,Snapshot Serengeti Ouroboros,24,volunteer_aw,volunteer_aw,
+4,50,Disk Detective 1.0,1,volunteer_aw,volunteer_aw,
+4,52,Condor Watch,1,volunteer_aw,volunteer_aw,
+4,36,Cyclone Center,8,volunteer_aw,volunteer_aw,
+4,26,Planet Hunters,6,volunteer_aw,volunteer_aw,
+4,53,Asteroid Zoo,53,volunteer_aw,volunteer_aw,
+5,54,Floating Forests v1,8,volunteer_aw9,volunteer_aw9,
+6,59,Orchid Observers,2,volunteer_ca,volunteer_ca,Mr. C.A.
+6,58,Science Gossip,60,volunteer_ca,volunteer_ca,Mr. C.A.
+6,36,Cyclone Center,5,volunteer_ca,volunteer_ca,Mr. C.A.
+6,40,Snapshot Serengeti Ouroboros,124,volunteer_ca,volunteer_ca,Mr. C.A.
+6,57,Chicago Wildlife Watch Original,12,volunteer_ca,volunteer_ca,Mr. C.A.
+6,54,Floating Forests v1,569,volunteer_ca,volunteer_ca,Mr. C.A.
+6,56,Higgs Hunters,24,volunteer_ca,volunteer_ca,Mr. C.A.
+6,45,Worm Watch Lab,11,volunteer_ca,volunteer_ca,Mr. C.A.
+6,48,Operation War Diary,1,volunteer_ca,volunteer_ca,Mr. C.A.
+6,51,Sunspotter,96,volunteer_ca,volunteer_ca,Mr. C.A.
+6,52,Condor Watch,10,volunteer_ca,volunteer_ca,Mr. C.A.
+6,53,Asteroid Zoo,19,volunteer_ca,volunteer_ca,Mr. C.A.
+6,43,Space Warps,30,volunteer_ca,volunteer_ca,Mr. C.A.
+6,55,Penguin Watch,189,volunteer_ca,volunteer_ca,Mr. C.A.
+6,41,Planet Four Ouroboros,9,volunteer_ca,volunteer_ca,Mr. C.A.
+6,60,Chimp & See Ouroboros,97,volunteer_ca,volunteer_ca,Mr. C.A.
+6,28,Old Weather,1,volunteer_ca,volunteer_ca,Mr. C.A.
+6,21,Galaxy Zoo,50,volunteer_ca,volunteer_ca,Mr. C.A.
+6,26,Planet Hunters,2,volunteer_ca,volunteer_ca,Mr. C.A.
+7,54,Floating Forests v1,12,volunter_og,volunter_og,
+7,26,Planet Hunters,1,volunter_og,volunter_og,
+7,55,Penguin Watch,12,volunter_og,volunter_og,
+7,52,Condor Watch,1,volunter_og,volunter_og,
+7,36,Cyclone Center,2,volunter_og,volunter_og,
+8,27,Milky Way Project,10,volunteer_bc,volunteer_bc,Mr. B.C.
+8,50,Disk Detective 1.0,2,volunteer_bc,volunteer_bc,Mr. B.C.
+8,52,Condor Watch,26,volunteer_bc,volunteer_bc,Mr. B.C.
+8,47,Radio Galaxy Zoo,3,volunteer_bc,volunteer_bc,Mr. B.C.
+8,46,Plankton Portal Ouroboros,2,volunteer_bc,volunteer_bc,Mr. B.C.
+8,22,Moon Zoo,7,volunteer_bc,volunteer_bc,Mr. B.C.
+8,45,Worm Watch Lab,4,volunteer_bc,volunteer_bc,Mr. B.C.
+8,55,Penguin Watch,5,volunteer_bc,volunteer_bc,Mr. B.C.
+8,36,Cyclone Center,48,volunteer_bc,volunteer_bc,Mr. B.C.
+8,53,Asteroid Zoo,7,volunteer_bc,volunteer_bc,Mr. B.C.
+8,43,Space Warps,10,volunteer_bc,volunteer_bc,Mr. B.C.
+8,30,Ancient Lives Ouroboros,4,volunteer_bc,volunteer_bc,Mr. B.C.
+8,37,Bat Detective,14,volunteer_bc,volunteer_bc,Mr. B.C.
+8,38,Cell Slider,2,volunteer_bc,volunteer_bc,Mr. B.C.
+8,39,Andromeda Project,2,volunteer_bc,volunteer_bc,Mr. B.C.
+8,35,Seafloor Explorer,22,volunteer_bc,volunteer_bc,Mr. B.C.
+8,21,Galaxy Zoo,40,volunteer_bc,volunteer_bc,Mr. B.C.
+8,32,Whale FM,2,volunteer_bc,volunteer_bc,Mr. B.C.
+8,40,Snapshot Serengeti Ouroboros,105,volunteer_bc,volunteer_bc,Mr. B.C.
+8,42,Notes from Nature I,1,volunteer_bc,volunteer_bc,Mr. B.C.
+8,26,Planet Hunters,15,volunteer_bc,volunteer_bc,Mr. B.C.
+8,41,Planet Four Ouroboros,66,volunteer_bc,volunteer_bc,Mr. B.C.
+8,56,Higgs Hunters,14,volunteer_bc,volunteer_bc,Mr. B.C.
+9,21,Galaxy Zoo,15,volunteer_eg,volunteer_eg,
+10,21,Galaxy Zoo,3,volunteer_am,Mr. A.M.,Mr. A.M.
+10,26,Planet Hunters,289,volunteer_am,Mr. A.M.,Mr. A.M.
+10,56,Higgs Hunters,108,volunteer_am,Mr. A.M.,Mr. A.M.
+10,54,Floating Forests v1,239,volunteer_am,Mr. A.M.,Mr. A.M.
+10,55,Penguin Watch,17,volunteer_am,Mr. A.M.,Mr. A.M.
+10,22,Moon Zoo,1,volunteer_am,Mr. A.M.,Mr. A.M.
+10,53,Asteroid Zoo,24,volunteer_am,Mr. A.M.,Mr. A.M.
+10,51,Sunspotter,31,volunteer_am,Mr. A.M.,Mr. A.M.
+10,47,Radio Galaxy Zoo,49,volunteer_am,Mr. A.M.,Mr. A.M.
+10,37,Bat Detective,11,volunteer_am,Mr. A.M.,Mr. A.M.
+10,50,Disk Detective 1.0,14,volunteer_am,Mr. A.M.,Mr. A.M.
+10,33,SETI Live,262,volunteer_am,Mr. A.M.,Mr. A.M.
+10,40,Snapshot Serengeti Ouroboros,82,volunteer_am,Mr. A.M.,Mr. A.M.
+10,27,Milky Way Project,4,volunteer_am,Mr. A.M.,Mr. A.M.
+10,60,Chimp & See Ouroboros,12,volunteer_am,Mr. A.M.,Mr. A.M.
+10,41,Planet Four Ouroboros,1,volunteer_am,Mr. A.M.,Mr. A.M.
+10,46,Plankton Portal Ouroboros,10,volunteer_am,Mr. A.M.,Mr. A.M.
+10,28,Old Weather,1,volunteer_am,Mr. A.M.,Mr. A.M.
+10,43,Space Warps,33,volunteer_am,Mr. A.M.,Mr. A.M.
+11,21,Galaxy Zoo,38,volunteer_k73,volunteer_k73,
+11,26,Planet Hunters,1,volunteer_k73,volunteer_k73,
+11,22,Moon Zoo,2,volunteer_k73,volunteer_k73,
+11,40,Snapshot Serengeti Ouroboros,11,volunteer_k73,volunteer_k73,
+11,25,Galaxy Zoo - Supernova,628,volunteer_k73,volunteer_k73,
+11,53,Asteroid Zoo,1,volunteer_k73,volunteer_k73,
+11,28,Old Weather,2,volunteer_k73,volunteer_k73,
+11,56,Higgs Hunters,222,volunteer_k73,volunteer_k73,
+12,40,Snapshot Serengeti Ouroboros,12,volunteer_rn,volunteer_rn,Mr. R.N.
+12,53,Asteroid Zoo,1716,volunteer_rn,volunteer_rn,Mr. R.N.
+12,28,Old Weather,177,volunteer_rn,volunteer_rn,Mr. R.N.
+12,22,Moon Zoo,9,volunteer_rn,volunteer_rn,Mr. R.N.
+12,23,Solar Stormwatch,14,volunteer_rn,volunteer_rn,Mr. R.N.
+12,50,Disk Detective 1.0,11,volunteer_rn,volunteer_rn,Mr. R.N.
+12,25,Galaxy Zoo - Supernova,11,volunteer_rn,volunteer_rn,Mr. R.N.
+12,26,Planet Hunters,54,volunteer_rn,volunteer_rn,Mr. R.N.
+12,21,Galaxy Zoo,168,volunteer_rn,volunteer_rn,Mr. R.N.
+12,36,Cyclone Center,4,volunteer_rn,volunteer_rn,Mr. R.N.
