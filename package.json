@@ -24,6 +24,7 @@
   "homepage": "https://github.com/zooniverse/ouroboros-volunteer-certificates#readme",
   "dependencies": {
     "@react-pdf/renderer": "^3.3.8",
+    "fast-csv": "^5.0.1",
     "react": "^18.2.0"
   }
 }

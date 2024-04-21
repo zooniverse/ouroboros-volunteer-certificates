@@ -25,6 +25,8 @@ function main () {
     console.log('npm start example-input.csv')
     return 1
   }
+
+  const volunteers = readCSV(inputFilename)
 }
 
 main()
