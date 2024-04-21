@@ -12,7 +12,19 @@ export default async function readCSV (filename) {
     .pipe(csv.parse({ headers: true }))
     .on('error', error => console.error(error))
     .on('data', (row) => {
-      volunteers.push(row)
+      let volunteer = volunteers.find(vol => vol.user_id === row.user_id)
+
+      if (!volunteer) {
+        volunteer = {
+          user_id: row?.user_id,
+          user_login: row?.user_login,
+          user_display_name: row?.user_display_name,
+          user_credited_name: row?.user_credited_name,
+          projects: [],
+        }
+        volunteers.push(volunteer)
+      }
+
     })
     .on('end', (rowCount) => {
       resolve(volunteers)
