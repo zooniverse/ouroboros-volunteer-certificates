@@ -27,8 +27,13 @@ async function main () {
   }
 
   const volunteers = await readCSV(inputFilename)
-  console.log('+++ volunteers:')
-  console.log(volunteers)
+  console.log(`${inputFilename} includes ${volunteers.length} volunteers`)
+
+  volunteers.forEach(volunteer => {
+    const outputFilename = `${__dirname}/output/${volunteer.user_login}.pdf`
+    ReactPDF.render(elem(ZooniverseCertificate, { volunteer }), outputFilename)
+    console.log(`- Created ${outputFilename}`)
+  })
 }
 
 main()

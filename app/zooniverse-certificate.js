@@ -44,21 +44,33 @@ const styles = StyleSheet.create({
   },
 })
 
-const ZooniverseCertificate = ({ name }) => (
-  elem(
-    Document, null,
-    elem(Page, { size: 'A4', style: styles.page },
-      elem(View, { style: styles.main },
-        elem(Image, { style: styles.zooLogo, src: `${__dirname}/../assets/zooniverse-logo-teal.png` }),
-        elem(Text, { style: styles.bigText },
-          name
-        ),
-        elem(Text, { style: styles.smallText },
-          'is a Zooniverse volunteer'
+function ZooniverseCertificate ({ volunteer }) {
+  const {
+    user_id,
+    user_login,
+    user_display_name,
+    user_credited_name,
+    projects
+  } = volunteer
+
+  const name = user_credited_name || user_display_name || user_login
+
+  return (
+    elem(
+      Document, null,
+      elem(Page, { size: 'A4', style: styles.page },
+        elem(View, { style: styles.main },
+          elem(Image, { style: styles.zooLogo, src: `${__dirname}/../assets/zooniverse-logo-teal.png` }),
+          elem(Text, { style: styles.bigText },
+            name
+          ),
+          elem(Text, { style: styles.smallText },
+            'is a Zooniverse volunteer'
+          )
         )
       )
     )
   )
-)
+}
 
 export default ZooniverseCertificate
