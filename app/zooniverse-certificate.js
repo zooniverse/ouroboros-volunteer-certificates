@@ -18,33 +18,78 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const styles = StyleSheet.create({
   page: {
     fontSize: '4mm',
-    backgroundColor: '#202020',
+    backgroundColor: '#ffffff',
   },
+
   main: {
-    margin: '20mm',
-    padding: '20mm',
+    margin: '10mm',
+    padding: '10mm',
     flexGrow: 1,
     textAlign: 'center',
     display: 'flex',
     flexDirection: 'column',
     backgroundColor: '#ffffff',
-    border: '2mm solid #00979d',
+    border: '2mm solid #005d69',
   },
+  userSection: {
+    textAlign: 'center',
+  },
+  projectsSection: {
+    marginTop: '4mm'
+  },
+
   zooLogo: {
     display: 'block',
     width: '15mm',
     margin: '0 auto',
   },
-  bigText: {
-    fontSize: '16mm',
-    textAlign: 'center',
+
+  userName: {
+    fontSize: '6mm',
+    fontWeight: 'bold',
+    marginBottom: '4mm',
+    marginTop: '4mm',
+    textTransform: 'uppercase',
   },
-  smallText: {
-    textAlign: 'center',
+  userLogin: {
+    color: '#5c5c5c',
+    fontSize: '4mm',
   },
-  placeholder: {
-    color: '#c040c0'
-  }
+  decoDivider: {
+    borderBottom: '0.25mm solid #5c5c5c',
+    margin: '4mm auto',
+    width: '60mm',
+  },
+  userTotalCount: {
+    color: '#005d69',
+    fontSize: '10mm',
+    marginBottom: '2mm',
+  },
+
+  textBig: {
+    fontSize: '6mm',
+    fontWeight: 'bold',
+    marginBottom: '2mm',
+  },
+  textSmall: {
+    color: '#5c5c5c',
+    fontSize: '2mm',
+    marginBottom: '1mm',
+  },
+
+  textTitle: {
+    fontSize: '5mm',
+    fontWeight: 'bold',
+    marginBottom: '2.5mm',
+  },
+  projectsList: {
+    border: '0.25mm solid #000'
+  },
+
+  projectItem: {
+    fontSize: '3mm',
+    textTransform: 'uppercase',
+  },
 })
 
 function ZooniverseCertificate ({ volunteer }) {
@@ -65,36 +110,39 @@ function ZooniverseCertificate ({ volunteer }) {
 
   return (
     elem(Document, { title: `Zooniverse Volunteer Certificate for ${name}` },
-      elem(Page, { orientation: 'landscape', size: 'A4', style: styles.page },
+      elem(Page, { orientation: 'portrait', size: 'A4', style: styles.page },
         elem(View, { style: styles.main },
-          elem(View, {},
-            elem(Image, { style: styles.zooLogo, src: `${__dirname}/../assets/zooniverse-logo-teal.png` }),
-            elem(Text, { style: styles.placeholder },
+          elem(View, { style: styles.userSection },
+            elem(Image, { style: styles.zooLogo,
+              src: `${__dirname}/../assets/zooniverse-logo-teal.png`
+            }),
+            elem(Text, { style: styles.userName },
               name
             ),
-            elem(Text, { style: styles.placeholder },
+            elem(Text, { style: styles.userLogin },
               `@${user_login}`
             ),
-            elem(Text, { style: styles.placeholder },
+            elem(View, { style: styles.decoDivider }),
+            elem(Text, { style: styles.userTotalCount },
               totalCount
             ),
-            elem(Text, { style: styles.placeholder },
+            elem(Text, { style: styles.textBig },
               'Total Classifications'
             ),
-            elem(Text, { style: styles.placeholder },
+            elem(Text, { style: styles.textSmall },
               'From the Zooniverse\'s legacy stats system.'
             ),
-            elem(Text, { style: styles.placeholder },
+            elem(Text, { style: styles.textSmall },
               'You can add this number to your current total classifications to get an accourate figure.'
             ),
           ),
-          elem(View, {},
-            elem(Text, { style: styles.placeholder },
+          elem(View, { style: styles.projectsSection },
+            elem(Text, { style: styles.textTitle },
               'Your Top Projects'
             ),
-            elem(View, {},
+            elem(View, { style: styles.projectsList },
               projects.map((project) => {
-                return elem(Text, {},
+                return elem(Text, { style: styles.projectItem },
                   `${project.project_display_name} - ${project.total_count}`
                 )
               })
