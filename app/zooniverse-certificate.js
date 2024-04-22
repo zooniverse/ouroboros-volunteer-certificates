@@ -87,7 +87,17 @@ const styles = StyleSheet.create({
   },
 
   projectItem: {
+    flexDirection: 'row',
     fontSize: '3mm',
+    padding: '1mm 4mm',
+    textAlign: 'left',
+  },
+  projectItemTitle: {
+    flex: '1 1 50%',
+    textTransform: 'uppercase',
+  },
+  projectItemCount: {
+    flex: '1 1 50%',
     textTransform: 'uppercase',
   },
 })
@@ -142,8 +152,13 @@ function ZooniverseCertificate ({ volunteer }) {
             ),
             elem(View, { style: styles.projectsList },
               projects.map((project) => {
-                return elem(Text, { style: styles.projectItem },
-                  `${project.project_display_name} - ${project.total_count}`
+                return elem(View, { style: styles.projectItem },
+                  elem(Text, { style: styles.projectItemTitle },
+                    project.project_display_name
+                  ),
+                  elem(Text, { style: styles.projectItemCount },
+                    `${project.total_count} Classifications`
+                  ),
                 )
               })
             )
