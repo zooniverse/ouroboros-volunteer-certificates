@@ -118,6 +118,8 @@ function ZooniverseCertificate ({ volunteer }) {
     return accumulator + parseInt(count)
   }, 0)
 
+  const sortedProjects = projects.toSorted((a, b) => ((parseInt(b.total_count) || 0) - (parseInt(a.total_count) || 0)))
+
   return (
     elem(Document, { title: `Zooniverse Volunteer Certificate for ${name}` },
       elem(Page, { orientation: 'portrait', size: 'A4', style: styles.page },
@@ -151,7 +153,7 @@ function ZooniverseCertificate ({ volunteer }) {
               'Your Top Projects'
             ),
             elem(View, { style: styles.projectsList },
-              projects.map((project) => {
+              sortedProjects.map((project) => {
                 return elem(View, { style: styles.projectItem },
                   elem(Text, { style: styles.projectItemTitle },
                     project.project_display_name
