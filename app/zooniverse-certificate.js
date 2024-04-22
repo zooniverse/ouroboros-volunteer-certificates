@@ -23,7 +23,6 @@ const styles = StyleSheet.create({
 
   main: {
     margin: '10mm',
-    padding: '10mm',
     flexGrow: 1,
     textAlign: 'center',
     display: 'flex',
@@ -31,6 +30,16 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
     border: '2mm solid #005d69',
   },
+
+  decoInner: {
+    border: '1mm solid #005d69',
+    display: 'flex',
+    flexGrow: 1,
+    flexDirection: 'column',
+    margin: '1mm',
+    padding: '10mm',
+  },
+
   userSection: {
     textAlign: 'center',
   },
@@ -124,45 +133,47 @@ function ZooniverseCertificate ({ volunteer }) {
     elem(Document, { title: `Zooniverse Volunteer Certificate for ${name}` },
       elem(Page, { orientation: 'portrait', size: 'A4', style: styles.page },
         elem(View, { style: styles.main },
-          elem(View, { style: styles.userSection },
-            elem(Image, { style: styles.zooLogo,
-              src: `${__dirname}/../assets/zooniverse-logo-teal.png`
-            }),
-            elem(Text, { style: styles.userName },
-              name
+          elem(View, { style: styles.decoInner },
+            elem(View, { style: styles.userSection },
+              elem(Image, { style: styles.zooLogo,
+                src: `${__dirname}/../assets/zooniverse-logo-teal.png`
+              }),
+              elem(Text, { style: styles.userName },
+                name
+              ),
+              elem(Text, { style: styles.userLogin },
+                `@${user_login}`
+              ),
+              elem(View, { style: styles.decoDivider }),
+              elem(Text, { style: styles.userTotalCount },
+                totalCount
+              ),
+              elem(Text, { style: styles.textBig },
+                'Total Classifications'
+              ),
+              elem(Text, { style: styles.textSmall },
+                'From the Zooniverse\'s legacy stats system.'
+              ),
+              elem(Text, { style: styles.textSmall },
+                'You can add this number to your current total classifications to get an accourate figure.'
+              ),
             ),
-            elem(Text, { style: styles.userLogin },
-              `@${user_login}`
-            ),
-            elem(View, { style: styles.decoDivider }),
-            elem(Text, { style: styles.userTotalCount },
-              totalCount
-            ),
-            elem(Text, { style: styles.textBig },
-              'Total Classifications'
-            ),
-            elem(Text, { style: styles.textSmall },
-              'From the Zooniverse\'s legacy stats system.'
-            ),
-            elem(Text, { style: styles.textSmall },
-              'You can add this number to your current total classifications to get an accourate figure.'
-            ),
-          ),
-          elem(View, { style: styles.projectsSection },
-            elem(Text, { style: styles.textTitle },
-              'Your Top Projects'
-            ),
-            elem(View, { style: styles.projectsList },
-              sortedProjects.map((project) => {
-                return elem(View, { style: styles.projectItem },
-                  elem(Text, { style: styles.projectItemTitle },
-                    project.project_display_name
-                  ),
-                  elem(Text, { style: styles.projectItemCount },
-                    `${project.total_count} Classifications`
-                  ),
-                )
-              })
+            elem(View, { style: styles.projectsSection },
+              elem(Text, { style: styles.textTitle },
+                'Your Top Projects'
+              ),
+              elem(View, { style: styles.projectsList },
+                sortedProjects.map((project) => {
+                  return elem(View, { style: styles.projectItem },
+                    elem(Text, { style: styles.projectItemTitle },
+                      project.project_display_name
+                    ),
+                    elem(Text, { style: styles.projectItemCount },
+                      `${project.total_count} Classifications`
+                    ),
+                  )
+                })
+              )
             )
           )
         )
