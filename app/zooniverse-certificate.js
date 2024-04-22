@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   },
   zooLogo: {
     display: 'block',
-    width: '50mm',
+    width: '15mm',
     margin: '0 auto',
   },
   bigText: {
@@ -42,6 +42,9 @@ const styles = StyleSheet.create({
   smallText: {
     textAlign: 'center',
   },
+  placeholder: {
+    color: '#c040c0'
+  }
 })
 
 function ZooniverseCertificate ({ volunteer }) {
@@ -50,27 +53,50 @@ function ZooniverseCertificate ({ volunteer }) {
     user_login,
     user_display_name,
     user_credited_name,
-    projects
+    projects = []
   } = volunteer
 
   const name = user_credited_name || user_display_name || user_login
+  
+  const totalCount = projects.reduce((accumulator, project) => {
+    const count = (isValidProject(project)) ? project?.total_count || 0 : 0
+    return accumulator + parseInt(count)
+  }, 0)
 
   return (
-    elem(
-      Document, null,
-      elem(Page, { size: 'A4', style: styles.page },
+    elem(Document, { title: `Zooniverse Volunteer Certificate for ${name}` },
+      elem(Page, { orientation: 'landscape', size: 'A4', style: styles.page },
         elem(View, { style: styles.main },
           elem(Image, { style: styles.zooLogo, src: `${__dirname}/../assets/zooniverse-logo-teal.png` }),
-          elem(Text, { style: styles.bigText },
+          elem(Text, { style: styles.placeholder },
             name
           ),
-          elem(Text, { style: styles.smallText },
-            'is a Zooniverse volunteer'
-          )
+          elem(Text, { style: styles.placeholder },
+            `@${user_login}`
+          ),
+          elem(Text, { style: styles.placeholder },
+            totalCount
+          ),
+          elem(Text, { style: styles.placeholder },
+            'Total Classifications'
+          ),
+          elem(Text, { style: styles.placeholder },
+            'From the Zooniverse\'s legacy stats system.'
+          ),
+          elem(Text, { style: styles.placeholder },
+            'You can add this number to your current total classifications to get an accourate figure.'
+          ),
+          elem(Text, { style: styles.placeholder },
+            'Your Top Projects'
+          ),
         )
       )
     )
   )
+}
+
+function isValidProject (project) {
+  return project?.project_id > 0
 }
 
 export default ZooniverseCertificate
