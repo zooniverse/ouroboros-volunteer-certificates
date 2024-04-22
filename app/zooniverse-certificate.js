@@ -17,7 +17,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 // Create styles
 const styles = StyleSheet.create({
   page: {
-    fontSize: '10mm',
+    fontSize: '4mm',
     backgroundColor: '#202020',
   },
   main: {
@@ -67,28 +67,39 @@ function ZooniverseCertificate ({ volunteer }) {
     elem(Document, { title: `Zooniverse Volunteer Certificate for ${name}` },
       elem(Page, { orientation: 'landscape', size: 'A4', style: styles.page },
         elem(View, { style: styles.main },
-          elem(Image, { style: styles.zooLogo, src: `${__dirname}/../assets/zooniverse-logo-teal.png` }),
-          elem(Text, { style: styles.placeholder },
-            name
+          elem(View, {},
+            elem(Image, { style: styles.zooLogo, src: `${__dirname}/../assets/zooniverse-logo-teal.png` }),
+            elem(Text, { style: styles.placeholder },
+              name
+            ),
+            elem(Text, { style: styles.placeholder },
+              `@${user_login}`
+            ),
+            elem(Text, { style: styles.placeholder },
+              totalCount
+            ),
+            elem(Text, { style: styles.placeholder },
+              'Total Classifications'
+            ),
+            elem(Text, { style: styles.placeholder },
+              'From the Zooniverse\'s legacy stats system.'
+            ),
+            elem(Text, { style: styles.placeholder },
+              'You can add this number to your current total classifications to get an accourate figure.'
+            ),
           ),
-          elem(Text, { style: styles.placeholder },
-            `@${user_login}`
-          ),
-          elem(Text, { style: styles.placeholder },
-            totalCount
-          ),
-          elem(Text, { style: styles.placeholder },
-            'Total Classifications'
-          ),
-          elem(Text, { style: styles.placeholder },
-            'From the Zooniverse\'s legacy stats system.'
-          ),
-          elem(Text, { style: styles.placeholder },
-            'You can add this number to your current total classifications to get an accourate figure.'
-          ),
-          elem(Text, { style: styles.placeholder },
-            'Your Top Projects'
-          ),
+          elem(View, {},
+            elem(Text, { style: styles.placeholder },
+              'Your Top Projects'
+            ),
+            elem(View, {},
+              projects.map((project) => {
+                return elem(Text, {},
+                  `${project.project_display_name} - ${project.total_count}`
+                )
+              })
+            )
+          )
         )
       )
     )
