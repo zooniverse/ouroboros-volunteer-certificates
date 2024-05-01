@@ -100,23 +100,27 @@ const styles = StyleSheet.create({
   },
 
   projectItem: {
+    alignItems: 'center',
     flexDirection: 'row',
-    fontSize: '2mm',
     padding: '1mm 4mm',
     textAlign: 'left',
   },
   projectItemTitle: {
+    fontSize: '2mm',
     flex: '1 1 70%',
     textTransform: 'uppercase',
   },
   projectItemCount: {
+    fontSize: '1.5mm',
     flex: '1 1 30%',
     textTransform: 'uppercase',
   },
 
-  projectItemAlt0: {},
+  projectItemAlt0: {
+    backgroundColor: '#f0f2f5',
+  },
   projectItemAlt1: {
-    backgroundColor: '#e0e0e0',
+    backgroundColor: '#ffffff',
   },
 })
 
@@ -149,7 +153,7 @@ function ZooniverseCertificate ({ volunteer }) {
 
   return (
     elem(Document, { title: `Zooniverse Volunteer Certificate for ${name}` },
-      elem(Page, { orientation: 'landscape', size: 'A4', style: styles.page },
+      elem(Page, { orientation: 'portrait', size: 'A4', style: styles.page },
         elem(View, { style: styles.main },
           elem(View, { style: styles.decoInner },
             elem(View, { style: styles.userSection },
