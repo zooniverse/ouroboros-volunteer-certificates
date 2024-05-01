@@ -129,6 +129,15 @@ function ZooniverseCertificate ({ volunteer }) {
 
   const sortedProjects = projects.toSorted((a, b) => ((parseInt(b.total_count) || 0) - (parseInt(a.total_count) || 0)))
 
+  const projectsByColumn = [[], []]
+  const colCount = projectsByColumn.length
+  sortedProjects.forEach((proj, index) => {  // Distribute projects to columns
+    const col = Math.floor(index / sortedProjects.length * colCount)
+    projectsByColumn[col].push(sortedProjects)
+
+    if (col >= colCount) throw new Error('ERROR: something went wrong in the sortedProjects maths. Please contact the developer to sort this out.')
+  });
+
   return (
     elem(Document, { title: `Zooniverse Volunteer Certificate for ${name}` },
       elem(Page, { orientation: 'portrait', size: 'A4', style: styles.page },
