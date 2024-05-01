@@ -133,8 +133,7 @@ function ZooniverseCertificate ({ volunteer }) {
   const colCount = projectsByColumn.length
   sortedProjects.forEach((proj, index) => {  // Distribute projects to columns
     const col = Math.floor(index / sortedProjects.length * colCount)
-    projectsByColumn[col].push(sortedProjects)
-
+    projectsByColumn[col].push(proj)
     if (col >= colCount) throw new Error('ERROR: something went wrong in the sortedProjects maths. Please contact the developer to sort this out.')
   });
 
