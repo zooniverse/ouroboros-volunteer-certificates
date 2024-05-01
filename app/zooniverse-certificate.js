@@ -92,22 +92,31 @@ const styles = StyleSheet.create({
     marginBottom: '2.5mm',
   },
   projectsList: {
-    border: '0.25mm solid #000'
+    border: '0.25mm solid #000',
+    flexDirection: 'row',
+  },
+  projectsListColumn: {
+    flexDirection: 'column',
   },
 
   projectItem: {
     flexDirection: 'row',
-    fontSize: '3mm',
+    fontSize: '2mm',
     padding: '1mm 4mm',
     textAlign: 'left',
   },
   projectItemTitle: {
-    flex: '1 1 50%',
+    flex: '1 1 70%',
     textTransform: 'uppercase',
   },
   projectItemCount: {
-    flex: '1 1 50%',
+    flex: '1 1 30%',
     textTransform: 'uppercase',
+  },
+
+  projectItemAlt0: {},
+  projectItemAlt1: {
+    backgroundColor: '#e0e0e0',
   },
 })
 
@@ -129,8 +138,9 @@ function ZooniverseCertificate ({ volunteer }) {
 
   const sortedProjects = projects.toSorted((a, b) => ((parseInt(b.total_count) || 0) - (parseInt(a.total_count) || 0)))
 
-  const projectsByColumn = [[], []]
-  const colCount = projectsByColumn.length
+  const colCount = Math.min(2, sortedProjects.length)
+  const projectsByColumn = []
+  for (let c = 0; c < colCount; c++) { projectsByColumn.push([]) }
   sortedProjects.forEach((proj, index) => {  // Distribute projects to columns
     const col = Math.floor(index / sortedProjects.length * colCount)
     projectsByColumn[col].push(proj)
@@ -139,7 +149,7 @@ function ZooniverseCertificate ({ volunteer }) {
 
   return (
     elem(Document, { title: `Zooniverse Volunteer Certificate for ${name}` },
-      elem(Page, { orientation: 'portrait', size: 'A4', style: styles.page },
+      elem(Page, { orientation: 'landscape', size: 'A4', style: styles.page },
         elem(View, { style: styles.main },
           elem(View, { style: styles.decoInner },
             elem(View, { style: styles.userSection },
@@ -171,14 +181,20 @@ function ZooniverseCertificate ({ volunteer }) {
                 'Your Top Projects'
               ),
               elem(View, { style: styles.projectsList },
-                sortedProjects.map((project) => {
-                  return elem(View, { style: styles.projectItem },
-                    elem(Text, { style: styles.projectItemTitle },
-                      project.project_display_name
-                    ),
-                    elem(Text, { style: styles.projectItemCount },
-                      `${project.total_count} Classifications`
-                    ),
+
+                projectsByColumn.map((projectsCol, col) => {
+                  return elem(View, { style: styles.projectsListColumn },
+                    projectsCol.map((project, cell) => {
+                      const alt = (cell + col) % colCount
+                      return elem(View, { style: { ...styles.projectItem, ...styles[`projectItemAlt${alt}`] } },
+                        elem(Text, { style: styles.projectItemTitle },
+                          project.project_display_name
+                        ),
+                        elem(Text, { style: styles.projectItemCount },
+                          `${project.total_count} Classifications`
+                        ),
+                      )
+                    })
                   )
                 })
               )
